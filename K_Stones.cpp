@@ -20,3 +20,44 @@ int main() {
     std::cout << (dp[k] ? "First" : "Second") << '\n';
     return 0;
 }
+
+/*
+Alternative Approach
+
+#include <bits/stdc++.h>
+
+const int N = 1e5 + 1;
+int dp[N];
+int f(int x, std::vector<int> &stones) {
+    if (x == 0) {
+        return 0;
+    }
+    if (x < 0) {
+        return 1;
+    }
+
+    if (dp[x] != -1) {
+        return dp[x];
+    }
+
+    bool ok = false;
+    for (auto stone : stones) {
+        if (!f(x - stone, stones)) {
+            ok = true;
+        }
+    }
+    return dp[x] = ok;
+}
+
+int main() {
+    int n, k;
+    std::cin >> n >> k;
+    std::vector<int> stones(n);
+    for (auto &x : stones) {
+        std::cin >> x;
+    }
+    memset(dp, -1, sizeof(dp));
+    std::cout << (f(k, stones) ? "First" : "Second") << '\n';
+    return 0;
+}
+*/
