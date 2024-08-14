@@ -38,7 +38,7 @@ void solve() {
         res += MOD;
     }
     
-    std::cout << res + MOD - 1 << '\n';
+    std::cout << res - 1 << '\n';
 }
 
 int main() {
