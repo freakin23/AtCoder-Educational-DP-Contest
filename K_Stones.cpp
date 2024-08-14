@@ -22,7 +22,7 @@ int main() {
 }
 
 /*
-Recursion Approach
+Recursive Approach
 
 #include <bits/stdc++.h>
 
